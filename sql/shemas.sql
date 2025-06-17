@@ -1,0 +1,10 @@
+CREATE DATABASE HackMySignIn;
+
+USE HackMySignIn;
+
+CREATE TABLE users (
+    id CHAR(36) UNIQUE NOT NULL DEFAULT (UUID()),
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
