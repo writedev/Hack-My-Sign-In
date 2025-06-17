@@ -1,11 +1,11 @@
 from databases import Database
 from sqlalchemy import create_engine, MetaData
 
-DATABASE_URL = "mysql+asyncmy://root:rootpassword@localhost:3306/nom_de_ta_db"
+DATABASE_URL = "mysql+asyncmy://root:rootpassword@localhost:3306/HackMySignIn"
 
-# Pour accès async
+#ForAsyncAccess
 database = Database(DATABASE_URL)
 
-# Pour les migrations et ORM
+# For migration and orm
 metadata = MetaData()
 engine = create_engine(DATABASE_URL.replace("asyncmy", "pymysql"))
