@@ -3,6 +3,7 @@ from api.sign import router as sign_router
 from core.database import database
 from contextlib import asynccontextmanager
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Code executed at startup (startup)
@@ -10,8 +11,6 @@ async def lifespan(app: FastAPI):
     yield
     #codeExecutedAtTheStop (shutdown)
     await database.disconnect()
-
-
 
 app = FastAPI(lifespan=lifespan)
 
